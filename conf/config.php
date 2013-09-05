@@ -12,5 +12,7 @@ return array(
         'pass' => '',
         'port' => '3306',
     ),
+
+
     'default_ctl'=>'MsgBoard'
 );
