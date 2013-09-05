@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sougou.iml" filepath="$PROJECT_DIR$/.idea/sougou.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/succinct.iml" filepath="$PROJECT_DIR$/.idea/succinct.iml" />
     </modules>
   </component>

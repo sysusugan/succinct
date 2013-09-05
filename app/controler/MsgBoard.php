@@ -12,7 +12,7 @@ class MsgBoard_Controler extends Controler {
         $config = $this->getConfig('DB');
         $this->mod = new MsgBoard_Model($config);
 
-        $data = $this->mod->getMsg();
+        $data['list'] = $this->mod->getMsg();
 
         $ret = array('status' => true, 'data' => array());
         if ($err = $this->mod->error()) {
@@ -21,7 +21,16 @@ class MsgBoard_Controler extends Controler {
         }
 
         $ret['data'] = $data;
-        die(json_encode($ret));
+		$this->renderView('index',$data);
+       // die(json_encode($ret));
+	   /*
+		$a=new MsgList_Widget('mylist');
+		$this->addWidget($a);
+		$this->renderView('header',$data);
+		$this->renderView('body',$data);
+		$this->renderView('footer',$data);
+		*/
+
 
 
     }
@@ -37,13 +46,15 @@ class MsgBoard_Controler extends Controler {
             'rt' => date('Y-m-d H:i:s', time()),
             'ut' => date('Y-m-d H:i:s', time()),
         );
-
+		
         $ret = array('status' => true);
-        if (!$this->mod->addMsg($data)) {
-            $ret['msg'] = $this->mod->error();
-            die(json_encode($ret));
+		$re = $this->mod->addMsg($data);
+        if (!$re) {
+            $ret['msg'] = $this->mod->error();           
         }
 
+		$ret['id'] = $re;
+		die(json_encode($ret));
     }
 
     public function edit() {
@@ -56,15 +67,16 @@ class MsgBoard_Controler extends Controler {
             'content' => $_REQUEST['content'],
             'reply_to' => (int)$_REQUEST['reply_to'],
             'is_reply' => isset($_REQUEST['reply_to']) ? 1 : 0,
+            //'rt' => date('Y-m-d H:i:s', time()),
             'ut' => date('Y-m-d H:i:s', time()),
         );
 
         $ret = array('status' => true);
         if (!$this->mod->updateMsg($data, "id='{$msgId}'")) {
             $ret['msg'] = $this->mod->error();
-            die(json_encode($ret));
+            
         }
-
+		die(json_encode($ret));
     }
 
     public function del() {
@@ -75,8 +87,9 @@ class MsgBoard_Controler extends Controler {
         $ret = array('status' => true);
         if (!$this->mod->delMsg($msgId)) {
             $ret['msg'] = $this->mod->error();
-            die(json_encode($ret));
+            
         }
+		die(json_encode($ret));
     }
 
 
