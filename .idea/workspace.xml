@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fccd56d5-fc6c-445c-922f-768727e91ecd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controler/HelloWorld.php" afterPath="$PROJECT_DIR$/app/controler/HelloWorld.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/MsgBoard.php" afterPath="$PROJECT_DIR$/app/model/MsgBoard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/helloworld/body.php" afterPath="$PROJECT_DIR$/app/view/helloworld/body.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/widgets/MsgList/MsgList.php" afterPath="$PROJECT_DIR$/app/widgets/MsgList/MsgList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/config.php" afterPath="$PROJECT_DIR$/conf/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Router.php" afterPath="$PROJECT_DIR$/system/core/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/ViewRender.php" afterPath="$PROJECT_DIR$/system/core/ViewRender.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Widget.php" afterPath="$PROJECT_DIR$/system/core/Widget.php" />
     </list>
     <ignored path="succinct.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,7 +58,7 @@
       <file leaf-file-name="Widget.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/core/Widget.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="32" selection-start="758" selection-end="770" vertical-scroll-proportion="-3.8461537">
+            <state line="7" column="32" selection-start="93" selection-end="93" vertical-scroll-proportion="-2.3076923">
               <folding />
             </state>
           </provider>
@@ -96,7 +87,7 @@
       <file leaf-file-name="ViewRender.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/system/core/ViewRender.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="0" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.4357367">
+            <state line="80" column="0" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.6238245">
               <folding />
             </state>
           </provider>
@@ -224,8 +215,22 @@
               <option name="myItemId" value="system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="succinct" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="succinct-git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sea-modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -239,7 +244,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,10 +279,6 @@
               <option name="myItemId" value="widgets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MsgList" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -294,28 +295,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="succinct" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="succinct-git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helloworld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -410,7 +389,11 @@
       <created>1378406881953</created>
       <updated>1378406881953</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test">
+      <created>1378408968068</created>
+      <updated>1378408968068</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -570,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Widget.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="32" selection-start="758" selection-end="770" vertical-scroll-proportion="-3.8461537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/widgets/MsgList/MsgList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="28" selection-start="198" selection-end="198" vertical-scroll-proportion="-5.3846154">
@@ -607,9 +583,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Widget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="32" selection-start="93" selection-end="93" vertical-scroll-proportion="-2.3076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/system/core/ViewRender.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="0" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.4357367">
+        <state line="80" column="0" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.6238245">
           <folding />
         </state>
       </provider>
