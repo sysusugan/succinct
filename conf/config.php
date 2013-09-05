@@ -7,7 +7,7 @@
 
 return array(
     'DB' => array(
-        'host' => '127.0.0.1',
+        'host' => 'localhost',
         'user' => 'root',
         'pass' => '',
         'port' => '3306',

@@ -24,7 +24,7 @@ class DB {
         $user = $config['user'];
         $pass = $config['pass'];
         if (!empty($config['port']) && is_numeric($config['port']))
-            $host  = $host . ':' . $config['port'];
+            $host = $host . ':' . $config['port'];
 
         $key = $host . '-' . $user;
         if (empty(self::$instance[$key])) {
@@ -49,7 +49,8 @@ class DB {
             DB_REQUERY_COUNT => 3, //查询重试次数3此
             DB_REQUERY_INTERVAL => 0, //查询重试时间间隔0秒
             DB_RECONNECT_COUNT => 3, //重连次数2此
-            DB_RECONNECT_INTERVAL => 0 //重连时间间隔0秒
+            DB_RECONNECT_INTERVAL => 0, //重连时间间隔0秒
+            DB_UNBUF_QUERY => 0 //重连时间间隔0秒
         );
     }
 
@@ -136,6 +137,8 @@ class DB {
     }
 
     public function error() {
-        return mysql_error($this->link);
+        if (is_resource($this->link))
+            return mysql_error($this->link);
+        return '';
     }
 }

@@ -21,16 +21,15 @@ class MsgBoard_Controler extends Controler {
         }
 
         $ret['data'] = $data;
-		$this->renderView('index',$data);
-       // die(json_encode($ret));
-	   /*
-		$a=new MsgList_Widget('mylist');
-		$this->addWidget($a);
-		$this->renderView('header',$data);
-		$this->renderView('body',$data);
-		$this->renderView('footer',$data);
-		*/
-
+        $this->renderView('index', $data);
+        // die(json_encode($ret));
+        /*
+         $a=new MsgList_Widget('mylist');
+         $this->addWidget($a);
+         $this->renderView('header',$data);
+         $this->renderView('body',$data);
+         $this->renderView('footer',$data);
+         */
 
 
     }
@@ -40,21 +39,21 @@ class MsgBoard_Controler extends Controler {
         $this->mod = new MsgBoard_Model($config);
 
         $data = array(
-            'content' => $_REQUEST['content'],
-            'reply_to' => (int)$_REQUEST['reply_to'],
-            'is_reply' => isset($_REQUEST['reply_to']) ? 1 : 0,
+            'content' => $this->R('content'),
+            'reply_to' => (int)$this->R('reply_to'),
+            'is_reply' => $this->R('reply_to', 'intval') ? 1 : 0,
             'rt' => date('Y-m-d H:i:s', time()),
             'ut' => date('Y-m-d H:i:s', time()),
         );
-		
+
         $ret = array('status' => true);
-		$re = $this->mod->addMsg($data);
+        $re = $this->mod->addMsg($data);
         if (!$re) {
-            $ret['msg'] = $this->mod->error();           
+            $ret['msg'] = $this->mod->error();
         }
 
-		$ret['id'] = $re;
-		die(json_encode($ret));
+        $ret['id'] = $re;
+        die(json_encode($ret));
     }
 
     public function edit() {
@@ -62,34 +61,33 @@ class MsgBoard_Controler extends Controler {
         $this->mod = new MsgBoard_Model($config);
 
 
-        $msgId = $_REQUEST['id'];
+        $msgId = $this->R('id');
         $data = array(
-            'content' => $_REQUEST['content'],
-            'reply_to' => (int)$_REQUEST['reply_to'],
-            'is_reply' => isset($_REQUEST['reply_to']) ? 1 : 0,
-            //'rt' => date('Y-m-d H:i:s', time()),
+            'content' => $this->R('content'),
+            'reply_to' => $this->R('reply_to', 'intval'),
+            'is_reply' => $this->R('reply_to') ? 1 : 0,
             'ut' => date('Y-m-d H:i:s', time()),
         );
 
         $ret = array('status' => true);
         if (!$this->mod->updateMsg($data, "id='{$msgId}'")) {
             $ret['msg'] = $this->mod->error();
-            
+
         }
-		die(json_encode($ret));
+        die(json_encode($ret));
     }
 
     public function del() {
         $config = $this->getConfig('DB');
         $this->mod = new MsgBoard_Model($config);
-        $msgId = $_REQUEST['id'];
+        $msgId = $this->R('id');
 
         $ret = array('status' => true);
         if (!$this->mod->delMsg($msgId)) {
             $ret['msg'] = $this->mod->error();
-            
+
         }
-		die(json_encode($ret));
+        die(json_encode($ret));
     }
 
 

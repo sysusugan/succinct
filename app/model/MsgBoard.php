@@ -12,12 +12,12 @@ class MsgBoard_Model {
     protected $dbName;
 
     public function __construct(array $config) {
-        $this->db = DB::getInstance($config);
+        $this->db = DB::getInstance($config );
         $this->dbName = 'msgboard';
     }
 
     public function getMsg() {
-        $sql = "select * from {$this->dbName}.msgboard ";
+        $sql = "select * from {$this->dbName}.msgboard order by ut desc ";
         return $this->db->getAll($sql);
     }
 
@@ -27,14 +27,13 @@ class MsgBoard_Model {
 
         foreach ($data as $field => $val) {
             $fieldArr[] = "`{$field}`";
-            $val = mysql_escape_string(htmlspecialchars($val));
+            $val = mysql_real_escape_string(htmlspecialchars($val));
             $valArr[] = "'{$val}'";
         }
 
         $fieldStr = implode(',', $fieldArr);
         $valStr = implode(',', $valArr);
         $sql = "insert into {$this->dbName}.msgboard ( $fieldStr) values  ($valStr) ";
-        var_dump($sql);
         return $this->db->query($sql);
     }
 
@@ -53,7 +52,7 @@ class MsgBoard_Model {
         else $where = '';
         $valArr = array();
         foreach ($data as $field => &$val) {
-            $val = mysql_escape_string($val);
+            $val = mysql_real_escape_string($val);
             $valArr[] = "$field='{$val}'";
         }
 
