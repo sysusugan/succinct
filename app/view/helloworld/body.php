@@ -1,6 +1,5 @@
-
 <style>
-    #main {
+    .main {
         width: 60%;
         min-height: 300px;
         border: 1px solid gray;
@@ -11,9 +10,11 @@
     }
 </style>
 
-<div id='main'>
+<div class='main'>
     <?= $msg2  ?>
 </div>
-
+<div class='main'>
+    <MsgList_Widget>mylist</MsgList_Widget>
+</div>
 </body>
 </html>

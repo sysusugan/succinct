@@ -8,11 +8,9 @@
 class HelloWorld_Controler extends Controler {
 
     public function index() {
-        $msg = 'hello world! head  1';
-        $msg2 = 'hello world! body 2';
-        $this->renderView('helloworld/head', array('msg1' => $msg));
-        $this->renderView('helloworld/body', array('msg2' => $msg2));
-
+        $msgList = new MsgList_Widget('mylist');
+        $this->addWidget($msgList);
+        $this->renderView('helloworld/body',array('msg2'=>1111));
     }
 
 

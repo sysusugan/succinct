@@ -5,7 +5,6 @@
  * @date: 13-8-22
  */
 
-
 class MsgBoard_Model {
 
     protected $db;

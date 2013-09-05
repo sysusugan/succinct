@@ -13,5 +13,5 @@ return array(
         'port' => '3306',
     ),
     //test
-    'default_ctl'=>'MsgBoard'
+    'default_ctl'=>'HelloWorld'
 );

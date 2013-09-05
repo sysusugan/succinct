@@ -37,12 +37,12 @@ abstract class ViewRender {
         $this->cacheVars = array_merge($this->cacheVars, $vars);
 
         extract($this->cacheVars);
+
         ob_start();
 
         if ((bool)@ini_get('short_open_tag') === FALSE) {
             echo eval('?>' . preg_replace("/;*\s*\?>/", "; ?>", str_replace('<?=', '<?php echo ', file_get_contents($path))));
-        }
-        else {
+        } else {
             include $path;
         }
 
@@ -58,11 +58,22 @@ abstract class ViewRender {
      * @param Widget $widget
      */
     public function addWidget(Widget $widget) {
-        $id = $widget->getWidgetId();
+        $id = $widget->id();
         $this->widgets[$id] = $widget;
     }
 
+
     public function display() {
+        if (!empty($this->widgets)) {
+
+            foreach ($this->widgets as $w) {
+                $id = $w->id();
+                $class = get_class($w);
+                $widgetTag = "<{$class}>{$id}</{$class}>";
+                $this->output = str_replace($widgetTag, $w->getRenderStr(), $this->output);
+            }
+
+        }
         echo $this->output;
     }
 

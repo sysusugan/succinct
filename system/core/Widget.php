@@ -29,7 +29,7 @@ abstract class Widget extends ViewRender {
     /**返回widget id
      * @return mixed
      */
-    public function getWidgetId() {
+    public function id() {
         return $this->id;
     }
 
