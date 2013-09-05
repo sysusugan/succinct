@@ -44,8 +44,15 @@ abstract class Widget extends ViewRender {
      * @return string
      */
     public function getRenderStr() {
-        ob_start();
-        $this->render();
-        return ob_get_clean();
+        //采用renderView方式
+        if (!empty($this->output)) {
+            return $this->output;
+        }
+        //采用echo或其他输出HTML代码的方式
+        else {
+            ob_start();
+            $this->render();
+            return ob_get_clean();
+        }
     }
 }
