@@ -55,6 +55,9 @@ class Router {
                 $controler->setConfig($config);
                 $controler->$act();
                 $controler->display();
+
+
+
             }
             else {
                 self::show404(" $ctl/$act not found!");
