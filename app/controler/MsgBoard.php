@@ -22,13 +22,13 @@ class MsgBoard_Controler extends Controler {
 
         $ret['data'] = $data;
 
+        //留言列表挂件类
         $list = new MsgList_Widget('mylist');
         $list->setData($data);
         $this->addWidget($list);
 
         $this->view('msgboard/header');
         $this->view('msgboard/index');
-        $this->view('msgboard/footer');
 
     }
 
