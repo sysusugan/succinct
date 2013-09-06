@@ -6,6 +6,7 @@
  */
 
 return array(
+    //数据库配置
     'DB' => array(
         'host' => 'localhost',
         'user' => 'root',
@@ -15,8 +16,8 @@ return array(
     ),
 
     //默认控制器
-    'default_ctl' => 'HelloWorld',
-//    'default_ctl' => 'MsgBoard',
+    //'default_ctl' => 'HelloWorld',
+    'default_ctl' => 'MsgBoard',
 
     //系统的根路径（index.php入口文件的路径）
     'base_url' => 'http://localhost/succinct',

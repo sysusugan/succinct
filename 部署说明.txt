@@ -1,7 +1,3 @@
-succinct
-========
-A php MVC framework
-
 1、系统目录介绍：
 app:目录为web应用的源码，其中：
     controller: 控制器文件夹，控制器要继承系统控制器基类，命名格式遵循约定 文件名（类名）+'_Controller'后缀
