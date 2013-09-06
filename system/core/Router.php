@@ -6,6 +6,7 @@
  */
 defined('APP_VIEW_PATH') or define('APP_VIEW_PATH', APP_PATH . '/view');
 include SYSTEM_PATH . '/core/DB.php';
+include SYSTEM_PATH . '/helpers/url_helper.php';
 
 
 class Router {
@@ -25,16 +26,14 @@ class Router {
                 $filename = current(explode('_', $class));
             }
 
-        }
-        //加载Model
+        } //加载Model
         elseif (false !== strpos(strtolower($class), 'model')) {
             $dir = SYSTEM_PATH . '/model';
             if (false !== strpos(strtolower($class), '_')) {
                 $dir = APP_PATH . '/model';
                 $filename = current(explode('_', $class));
             }
-        }
-        //加载Model
+        } //加载Model
         elseif (false !== strpos(strtolower($class), 'widget')) {
             $dir = SYSTEM_PATH . '/core';
             if (false !== strpos(strtolower($class), '_')) {
@@ -69,13 +68,11 @@ class Router {
                 $controler->$act();
                 $controler->display();
 
-            }
-            else {
+            } else {
                 self::show404(' $ctl/$act not found!');
             }
 
-        }
-        else {
+        } else {
             self::show404($class . ' 404!');
         }
 

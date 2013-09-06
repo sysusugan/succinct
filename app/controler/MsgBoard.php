@@ -6,9 +6,11 @@
  */
 
 class MsgBoard_Controler extends Controler {
+
     private $mod;
 
     public function index() {
+
         $config = $this->getConfig('DB');
         $this->mod = new MsgBoard_Model($config);
 
