@@ -9,6 +9,7 @@ return array(
     'DB' => array(
         'host' => 'localhost',
         'user' => 'root',
+        'dbase' => 'msgboard',
         'pass' => '',
         'port' => '3306',
     ),

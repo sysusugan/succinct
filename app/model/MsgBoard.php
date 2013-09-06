@@ -5,16 +5,7 @@
  * @date: 13-8-22
  */
 
-class MsgBoard_Model {
-
-    protected $db;
-    protected $dbName;
-
-    public function __construct(array $config) {
-        $this->db = DB::getInstance($config);
-        //数据库名
-        $this->dbName = 'msgboard';
-    }
+class MsgBoard_Model extends Model {
 
     public function getMsg() {
         $sql = "select * from {$this->dbName}.msgboard order by ut desc ";
