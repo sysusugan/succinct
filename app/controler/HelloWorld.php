@@ -8,9 +8,9 @@
 class HelloWorld_Controler extends Controler {
 
     public function index() {
-        $msgList = new MsgList_Widget('mylist');
-        $this->addWidget($msgList);
-        $this->view('helloworld/body', array('msg2' => 1111));
+
+        $this->view('helloworld/head', array('msg' => "这是helloword页面! "));
+        $this->view('helloworld/body', array('msg' => "这是helloword页面! "));
     }
 
 }

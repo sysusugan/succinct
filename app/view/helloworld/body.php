@@ -1,20 +1,15 @@
-<style>
-    .main {
-        width: 60%;
-        min-height: 300px;
-        border: 1px solid gray;
-        border-radius: 5px;
-        background: whitesmoke;
-        font: Arial 11px;
-        margin: 0 auto;
-    }
-</style>
+<body>
 
-<div class='main'>
-    <?= $msg2  ?>
+<br>
+
+<div id="container">
+    <h1>Welcome !</h1>
+
+    <div id="body">
+        <p><?=$msg?></p>
+    </div>
+
 </div>
-<div class='main'>
-    <MsgList_Widget>mylist</MsgList_Widget>
-</div>
+
 </body>
 </html>
