@@ -1,6 +1,4 @@
-<
-
-div class="com-list">
+<div class="com-list">
 <div id="placeholder"></div>
 <?php foreach ($list as $one): ?>
     <div class="com-li">

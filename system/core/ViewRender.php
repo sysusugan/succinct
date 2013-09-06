@@ -26,15 +26,16 @@ abstract class ViewRender {
      * @return string
      * @throws InvalidArgumentException
      */
-    public function renderView($view, $vars = array(), $return = FALSE) {
+    public function view($view, $vars = array(), $return = FALSE) {
 
         $_ext = pathinfo($view, PATHINFO_EXTENSION);
         $_file = ($_ext == '') ? $view . '.php' : $view;
 
         $path = $this->viewPath . "/{$_file}";
-        if (!file_exists($path)) throw new InvalidArgumentException();
+        if (!file_exists($path)) throw new InvalidArgumentException('no such file : ' . $path);
 
-        $this->cacheVars = array_merge($this->cacheVars, $vars);
+        if (!empty($this->cacheVars) && !empty($vars))
+            $this->cacheVars = array_merge($this->cacheVars, $vars);
 
         extract($this->cacheVars);
 
@@ -56,6 +57,7 @@ abstract class ViewRender {
 
     /**添加挂件
      * @param Widget $widget
+     * @return $this
      */
     public function addWidget(Widget $widget) {
         $id = $widget->id();
@@ -70,6 +72,7 @@ abstract class ViewRender {
                 $id = $w->id();
                 $class = get_class($w);
                 $widgetTag = "<{$class}>{$id}</{$class}>";
+
                 $this->output = str_replace($widgetTag, $w->getRenderStr(), $this->output);
             }
 

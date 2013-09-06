@@ -18,7 +18,7 @@ abstract class Widget extends ViewRender {
         if (empty($id)) throw new InvalidArgumentException('widget id should not be empty!');
 
         $this->id = $id;
-        $this->viewPath = APP_PATH . '/' . current(explode('_', get_class($this)));
+        $this->viewPath = APP_PATH . '/widgets/' . current(explode('_', get_class($this)));
     }
 
     /**挂件渲染函数
@@ -35,9 +35,11 @@ abstract class Widget extends ViewRender {
 
     /**设置数据
      * @param $data
+     * @return $this
      */
     public function setData($data) {
         $this->data = $data;
+        return $this;
     }
 
     /**获取挂件渲染后的HTML代码

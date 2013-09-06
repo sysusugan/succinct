@@ -21,11 +21,18 @@ class MsgBoard_Controler extends Controler {
         }
 
         $ret['data'] = $data;
-        $this->renderView('index', $data);
+
+        $list = new MsgList_Widget('mylist');
+        $list->setData($data);
+        $this->addWidget($list);
+
+        $this->view('msgboard/header', $data);
+        $this->view('msgboard/index', $data);
+        $this->view('msgboard/footer', $data);
+
+
         // die(json_encode($ret));
         /*
-         $a=new MsgList_Widget('mylist');
-         $this->addWidget($a);
          $this->renderView('header',$data);
          $this->renderView('body',$data);
          $this->renderView('footer',$data);

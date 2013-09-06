@@ -13,6 +13,6 @@ class MsgList_Widget extends Widget {
 
 
     public function render() {
-
+        $this->view('msglist_view', $this->data);
     }
 }

@@ -10,7 +10,7 @@ class HelloWorld_Controler extends Controler {
     public function index() {
         $msgList = new MsgList_Widget('mylist');
         $this->addWidget($msgList);
-        $this->renderView('helloworld/body',array('msg2'=>1111));
+        $this->view('helloworld/body',array('msg2'=>1111));
     }
 
 
