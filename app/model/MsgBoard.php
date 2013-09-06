@@ -11,7 +11,8 @@ class MsgBoard_Model {
     protected $dbName;
 
     public function __construct(array $config) {
-        $this->db = DB::getInstance($config );
+        $this->db = DB::getInstance($config);
+        //数据库名
         $this->dbName = 'msgboard';
     }
 

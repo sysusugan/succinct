@@ -12,7 +12,10 @@ return array(
         'pass' => '',
         'port' => '3306',
     ),
-    //test
+
+    //默认控制器
     'default_ctl' => 'MsgBoard',
-    'base_url' => 'http://localhost/succinct', //系统的根路径（index.php入口文件的路径）
+
+    //系统的根路径（index.php入口文件的路径）
+    'base_url' => 'http://localhost/succinct',
 );
