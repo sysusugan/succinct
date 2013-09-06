@@ -43,17 +43,24 @@ abstract class Widget extends ViewRender {
     }
 
     /**获取挂件渲染后的HTML代码
+     * @throws InvalidArgumentException
      * @return string
      */
     public function getRenderStr() {
         //采用renderView方式
         if (!empty($this->output)) {
-            return $this->output;
+            $out = $this->output;
         } //采用echo或其他输出HTML代码的方式
-        else {
+
+        if (!empty($this->data)) {
             ob_start();
             $this->render();
-            return ob_get_clean();
+            $out = ob_get_contents();
+            ob_clean();
         }
+//        var_dump($out);
+        if (!empty($out)) return $out;
+
+        throw new InvalidArgumentException('widget data must be set!');
     }
 }

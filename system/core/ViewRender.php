@@ -34,7 +34,7 @@ abstract class ViewRender {
         $path = $this->viewPath . "/{$_file}";
         if (!file_exists($path)) throw new InvalidArgumentException('no such file : ' . $path);
 
-        if (!empty($this->cacheVars) && !empty($vars))
+        if (is_array($vars))
             $this->cacheVars = array_merge($this->cacheVars, $vars);
 
         extract($this->cacheVars);
@@ -48,11 +48,19 @@ abstract class ViewRender {
         }
 
         if ($return) {
-            return ob_get_clean();
+            $out = ob_get_contents();
+            ob_end_clean();
+            return $out;
         }
 
-        $this->output .= ob_get_contents();
-        ob_end_clean();
+        if ($this instanceof Controler) {
+            $this->output .= ob_get_contents();
+            ob_end_clean();
+        }
+
+        if ($this instanceof Widget) {
+            ob_end_flush();
+        }
     }
 
     /**添加挂件
@@ -72,7 +80,7 @@ abstract class ViewRender {
                 $id = $w->id();
                 $class = get_class($w);
                 $widgetTag = "<{$class}>{$id}</{$class}>";
-
+//echo ($w->getRenderStr());
                 $this->output = str_replace($widgetTag, $w->getRenderStr(), $this->output);
             }
 

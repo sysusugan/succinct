@@ -26,18 +26,9 @@ class MsgBoard_Controler extends Controler {
         $list->setData($data);
         $this->addWidget($list);
 
-        $this->view('msgboard/header', $data);
-        $this->view('msgboard/index', $data);
-        $this->view('msgboard/footer', $data);
-
-
-        // die(json_encode($ret));
-        /*
-         $this->renderView('header',$data);
-         $this->renderView('body',$data);
-         $this->renderView('footer',$data);
-         */
-
+        $this->view('msgboard/header');
+        $this->view('msgboard/index');
+        $this->view('msgboard/footer');
 
     }
 
