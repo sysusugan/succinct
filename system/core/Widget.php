@@ -18,7 +18,7 @@ abstract class Widget extends ViewRender {
         if (empty($id)) throw new InvalidArgumentException('widget id should not be empty!');
 
         $this->id = $id;
-        $this->viewPath = dirname(__FILE__);
+        $this->viewPath = APP_PATH . '/' . current(explode('_', get_class($this)));
     }
 
     /**挂件渲染函数
@@ -47,8 +47,7 @@ abstract class Widget extends ViewRender {
         //采用renderView方式
         if (!empty($this->output)) {
             return $this->output;
-        }
-        //采用echo或其他输出HTML代码的方式
+        } //采用echo或其他输出HTML代码的方式
         else {
             ob_start();
             $this->render();

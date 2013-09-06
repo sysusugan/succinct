@@ -13,5 +13,6 @@ return array(
         'port' => '3306',
     ),
     //test
-    'default_ctl'=>'HelloWorld'
+    'default_ctl' => 'MsgBoard',
+    'base_url' => 'http://localhost/succinct', //系统的根路径（index.php入口文件的路径）
 );
